@@ -69,4 +69,69 @@ public class ProductManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+
+//------------------------------------------------Тесты по доп. заданию------------------------------------------------//
+
+
+    @Test
+    public void searchByBookTitle() {//поиск по названию книги
+
+        Boolean expected = true;
+        Boolean actual = man.matches(b3, "Book Three");
+
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void searchByAuthor() {//поиск по автору
+
+        Boolean expected = true;
+        Boolean actual = man.matches(b3, "Tolstoy");
+
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void searchByBookTitleNegative() {//поиск по автору
+
+        Boolean expected = false;
+        Boolean actual = man.matches(b3, "King");
+
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void searchByModel() {//поиск по модели
+
+        Boolean expected = true;
+        Boolean actual = man.matches(s2, "Smatrphone Two");
+
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void searchByManufacturer() {//поиск по производителю
+
+        Boolean expected = true;
+        Boolean actual = man.matches(s2, "ManufacturTwo");
+
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void searchByModelNegative() {//поиск по автору
+
+        Boolean expected = false;
+        Boolean actual = man.matches(s2, "Smartphone Six");
+
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
